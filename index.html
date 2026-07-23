@@ -6,7 +6,7 @@
     <title>New Covenant Baptist Church - Calabar</title>
 
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -110,7 +110,6 @@
             color: var(--text-main);
         }
 
-        /* Custom NCBC Emblem with Circular Badge Text */
         .ncbc-emblem {
             position: relative;
             width: 44px;
@@ -202,13 +201,13 @@
         /* --- Hero Section --- */
         .hero {
             position: relative;
-            min-height: 80vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            padding: 3rem 1.25rem;
+            padding: 3.5rem 1.25rem;
             overflow: hidden;
         }
 
@@ -234,7 +233,7 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.92) 100%);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.94) 100%);
             z-index: 2;
         }
 
@@ -245,17 +244,26 @@
             width: 100%;
         }
 
-        .hero h1 {
-            font-size: clamp(1.8rem, 6vw, 3.8rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        /* CORRECTION 1: Bold, Unique & Alive Hero Heading */
+        .hero h1.welcome-title {
+            font-size: clamp(2rem, 6.5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+            text-transform: capitalize;
+            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
         }
 
         .hero p {
-            font-size: clamp(0.95rem, 3vw, 1.2rem);
+            font-size: clamp(1rem, 3.2vw, 1.25rem);
             color: #cbd5e1;
             margin-bottom: 1.75rem;
+            font-weight: 500;
         }
 
         .hero-buttons {
@@ -326,11 +334,63 @@
         .verse-bar {
             background: var(--card-bg);
             border-bottom: 1px solid var(--border);
-            padding: 1rem;
+            padding: 1.2rem 1rem;
             text-align: center;
             font-family: 'Playfair Display', serif;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-style: italic;
+        }
+
+        /* CORRECTIONS 3 & 4: Vision & Mission Section Styles */
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.75rem;
+            margin-top: 1rem;
+        }
+
+        .vm-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+        }
+
+        .vm-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .vm-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+        }
+
+        .vm-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
         }
 
         /* --- Sections & Cards --- */
@@ -459,7 +519,7 @@
             border-radius: var(--radius);
         }
 
-        /* --- Modal --- */
+        /* CORRECTION 2: Modal with Giving Breakdown (Offering, Tithe, Building) */
         .modal {
             display: none;
             position: fixed;
@@ -470,15 +530,18 @@
             align-items: center;
             justify-content: center;
             padding: 1rem;
+            overflow-y: auto;
         }
 
         .modal-body {
             background: var(--card-bg);
             padding: 1.75rem;
             border-radius: var(--radius);
-            max-width: 440px;
+            max-width: 520px;
             width: 100%;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .close-modal {
@@ -487,6 +550,30 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--text-muted);
+        }
+
+        .giving-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 0.85rem;
+        }
+
+        .giving-card h4 {
+            color: var(--accent);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .giving-card .acc-num {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
         }
 
         /* --- Footer --- */
@@ -592,7 +679,6 @@
     <!-- Top Live Announcement Ticker linked directly to Facebook Live -->
     <div class="live-bar">
         <div>
-            <!-- Replace the href link below with your exact Facebook Page URL -->
             <a href="https://facebook.com" target="_blank" class="live-link">
                 <i class="fa-solid fa-signal"></i> Live Stream
             </a>
@@ -604,7 +690,6 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo-wrap">
-                <!-- Circular NCBC Badge around central Cross -->
                 <div class="ncbc-emblem">
                     <i class="fa-solid fa-cross"></i>
                     <svg viewBox="0 0 100 100">
@@ -624,6 +709,7 @@
 
             <!-- Mobile Slide-Down Menu -->
             <ul class="nav-links" id="mobileNav">
+                <li><a href="#about" onclick="toggleMenu()">About Us</a></li>
                 <li><a href="#services" onclick="toggleMenu()">Services</a></li>
                 <li><a href="#events" onclick="toggleMenu()">Special Events</a></li>
                 <li><a href="#contact" onclick="toggleMenu()">Contact & Visit</a></li>
@@ -635,7 +721,6 @@
                 </button>
                 <button class="btn btn-accent" style="padding: 0.5rem 0.9rem; font-size: 0.8rem;" onclick="toggleModal(true)">Give</button>
                 
-                <!-- Mobile Hamburger Button -->
                 <button class="mobile-toggle" onclick="toggleMenu()">
                     <i class="fa-solid fa-bars" id="menuIcon"></i>
                 </button>
@@ -653,8 +738,9 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <h1>Experience God’s Transforming Love</h1>
-            <p>Welcome to New Covenant Baptist Church in Calabar. A vibrant community devoted to faith, fellowship, and worship.</p>
+            <!-- CORRECTION 1: Bold, Alive & Unique Header -->
+            <h1 class="welcome-title">Welcome to New Covenant Baptist Church</h1>
+            <p>A vibrant community in Calabar devoted to faith, worship, and experiencing God’s transforming love.</p>
 
             <!-- Sunday Service Live Countdown -->
             <div class="countdown-wrap">
@@ -666,7 +752,6 @@
 
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-gold"><i class="fa-solid fa-calendar-check"></i> Service Times</a>
-                <!-- Direct Facebook Live Stream Link Button -->
                 <a href="https://facebook.com" target="_blank" class="btn btn-fb"><i class="fa-brands fa-facebook"></i> Facebook Live</a>
             </div>
         </div>
@@ -678,8 +763,43 @@
         <span>"For where two or three gather in my name, there am I with them." — Matthew 18:20</span>
     </div>
 
+    <!-- CORRECTIONS 3 & 4: Vision & Mission Section -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2>Who We Are</h2>
+            <p>Guided by God’s Word to make a lasting impact in Calabar and beyond.</p>
+        </div>
+
+        <div class="vision-mission-grid">
+            <!-- Vision Card -->
+            <div class="vm-card">
+                <div class="vm-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To be a vibrant Christ-centered community devoted to spreading the Gospel, 
+                    fostering genuine spiritual growth, and transforming lives through the love, 
+                    grace, and truth of Jesus Christ.
+                </p>
+            </div>
+
+            <!-- Mission Card -->
+            <div class="vm-card">
+                <div class="vm-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To glorify God by reaching the unreached, discipling believers into spiritual maturity, 
+                    and equipping every member for impactful service within our church, local community, and the world.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Service Times -->
-    <section class="section" id="services">
+    <section class="section" id="services" style="background: rgba(0,0,0,0.015);">
         <div class="section-header">
             <h2>Weekly Gatherings</h2>
             <p>We welcome you to worship and grow in grace with us throughout the week.</p>
@@ -715,7 +835,7 @@
     </section>
 
     <!-- Monthly Special Programs -->
-    <section class="section" id="events" style="background: rgba(0,0,0,0.02);">
+    <section class="section" id="events">
         <div class="section-header">
             <h2>Monthly Special Programs</h2>
             <p>Special encounters designed for spiritual renewal and praise.</p>
@@ -749,7 +869,7 @@
     </section>
 
     <!-- Location & Detailed Contact Section -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" style="background: rgba(0,0,0,0.015);">
         <div class="section-header">
             <h2>Contact & Visit Us</h2>
             <p>Reach out to us or find us in Calabar!</p>
@@ -759,7 +879,6 @@
             <h3><i class="fa-solid fa-church" style="color: var(--accent);"></i> New Covenant Baptist Church</h3>
             <p style="color: var(--text-muted); font-size: 0.9rem;">Located in Calabar, Cross River State, Nigeria.</p>
 
-            <!-- Phone & Email Cards -->
             <div class="contact-card-grid">
                 <div class="contact-box">
                     <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
@@ -780,29 +899,44 @@
 
             <button class="btn btn-accent" style="width: 100%; margin-bottom: 1rem;" onclick="copyAddress()"><i class="fa-solid fa-copy"></i> Copy Address</button>
 
-            <!-- Embedded Map -->
             <iframe class="map-box" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127123.6331908998!2d8.283120153835467!3d4.975716162319409!2m3!1f0!0!f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105373a216616421%3A0xd738b5849889508!2sCalabar%2C%20Cross%20River!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
-    <!-- Giving Modal -->
+    <!-- CORRECTION 2: Enhanced Giving Modal (Offering, Tithe, Building Offering) -->
     <div class="modal" id="givingModal">
         <div class="modal-body">
             <span class="close-modal" onclick="toggleModal(false)">&times;</span>
-            <h3 style="margin-bottom: 0.75rem;"><i class="fa-solid fa-hand-holding-heart" style="color: var(--gold);"></i> Support Our Ministry</h3>
+            <h3 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-hand-holding-heart" style="color: var(--gold);"></i> Support Our Ministry</h3>
             <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.25rem;">
-                You can give your tithes, offerings, or seed donations via direct bank transfer:
+                Select a category below to give your tithes, offerings, or seed donations via direct bank transfer:
             </p>
-            <div style="background: var(--light-bg); padding: 0.85rem; border-radius: 10px; margin-bottom: 0.85rem;">
-                <div style="font-size: 0.75rem; color: var(--text-muted);">BANK</div>
-                <div style="font-weight: 700;">First Bank of Nigeria</div>
+
+            <!-- Offering Option -->
+            <div class="giving-card">
+                <h4><i class="fa-solid fa-gift"></i> 1. Offering</h4>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">First Bank of Nigeria</div>
+                <div class="acc-num">0000 0000 01</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">New Covenant Baptist Church - Offering</div>
             </div>
-            <div style="background: var(--light-bg); padding: 0.85rem; border-radius: 10px; margin-bottom: 1.25rem;">
-                <div style="font-size: 0.75rem; color: var(--text-muted);">ACCOUNT NUMBER</div>
-                <div style="font-weight: 800; font-size: 1.2rem; color: var(--accent);">0000 0000 00</div>
-                <div style="font-size: 0.8rem; color: var(--text-muted);">New Covenant Baptist Church</div>
+
+            <!-- Tithe Option -->
+            <div class="giving-card">
+                <h4><i class="fa-solid fa-coins"></i> 2. Tithe</h4>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">First Bank of Nigeria</div>
+                <div class="acc-num">0000 0000 02</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">New Covenant Baptist Church - Tithe</div>
             </div>
-            <button class="btn btn-accent" style="width: 100%;" onclick="toggleModal(false)">Close</button>
+
+            <!-- Building Offering Option -->
+            <div class="giving-card">
+                <h4><i class="fa-solid fa-city"></i> 3. Building Offering</h4>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">First Bank of Nigeria</div>
+                <div class="acc-num">0000 0000 03</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">New Covenant Baptist Church - Building</div>
+            </div>
+
+            <button class="btn btn-accent" style="width: 100%; margin-top: 0.5rem;" onclick="toggleModal(false)">Close</button>
         </div>
     </div>
 
