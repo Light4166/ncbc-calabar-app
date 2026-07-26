@@ -201,7 +201,7 @@
         /* --- Hero Section --- */
         .hero {
             position: relative;
-            min-height: 85vh;
+            min-height: 88vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -233,7 +233,7 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.94) 100%);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.95) 100%);
             z-index: 2;
         }
 
@@ -244,24 +244,58 @@
             width: 100%;
         }
 
+        /* --- UNIQUE 2026 THEME BADGE --- */
+        .theme-badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.15);
+            border: 2px solid var(--gold);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+            animation: pulse 3s infinite;
+        }
+
+        .theme-badge .year-label {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #fef08a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .theme-badge h2 {
+            font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+            font-weight: 900;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .theme-badge .scripture {
+            font-size: 0.8rem;
+            color: #fde047;
+            font-weight: 700;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
         .hero h1.welcome-title {
-            font-size: clamp(2rem, 6.5vw, 4rem);
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
             font-weight: 900;
             line-height: 1.15;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.5px;
-            text-transform: capitalize;
-            background: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #f59e0b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.3));
+            margin-bottom: 1rem;
+            color: #ffffff;
         }
 
         .hero p {
-            font-size: clamp(1rem, 3.2vw, 1.25rem);
+            font-size: clamp(0.95rem, 2.8vw, 1.15rem);
             color: #cbd5e1;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
@@ -274,25 +308,25 @@
 
         /* --- Countdown Widget --- */
         .countdown-wrap {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 0.85rem;
             border-radius: var(--radius);
             display: inline-flex;
             gap: 1.25rem;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.5rem;
             max-width: 100%;
             justify-content: center;
         }
 
         .time-unit {
             text-align: center;
-            min-width: 50px;
+            min-width: 48px;
         }
 
         .time-unit .val {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--gold);
             display: block;
@@ -343,10 +377,10 @@
         /* --- Vision & Mission Section (30% Smaller Layout) --- */
         .vision-mission-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.25rem;
             margin: 0.5rem auto 0;
-            max-width: 820px;
+            max-width: 850px;
         }
 
         .vm-card {
@@ -369,28 +403,49 @@
         }
 
         .vm-icon {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
             background: rgba(37, 99, 235, 0.1);
             color: var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 0.75rem;
         }
 
         .vm-card h3 {
             font-size: 1.15rem;
             font-weight: 800;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
 
         .vm-card p {
             color: var(--text-muted);
             font-size: 0.85rem;
             line-height: 1.55;
+        }
+
+        .vm-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vm-card ul li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .vm-card ul li i {
+            color: var(--accent);
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
         }
 
         /* --- Sections & Cards --- */
@@ -504,11 +559,11 @@
             text-transform: uppercase;
         }
 
-        .contact-info a {
+        .contact-info a, .contact-info span {
             color: var(--text-main);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             word-break: break-all;
         }
 
@@ -616,7 +671,7 @@
 
         @keyframes pulse {
             0% { opacity: 1; }
-            50% { opacity: 0.6; }
+            50% { opacity: 0.7; }
             100% { opacity: 1; }
         }
 
@@ -703,7 +758,7 @@
                 </div>
                 <div class="logo-text">
                     New Covenant Baptist
-                    <span>Calabar, Nigeria</span>
+                    <span>Diamond Hill, Calabar</span>
                 </div>
             </a>
 
@@ -737,8 +792,15 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content">
+            <!-- 2026 Theme of the Year Banner -->
+            <div class="theme-badge">
+                <span class="year-label">2026 Theme of the Year</span>
+                <h2>MY YEAR OF GIFTS FOR FRUITFULNESS</h2>
+                <span class="scripture">(GAL 5:22-23, 2 COR 9:10)</span>
+            </div>
+
             <h1 class="welcome-title">Welcome to New Covenant Baptist Church</h1>
-            <p>A vibrant community in Calabar devoted to faith, worship, and experiencing God’s transforming love.</p>
+            <p>No 59 Odukpani Road, Diamond Hill, Calabar, Cross River State.</p>
 
             <div class="countdown-wrap">
                 <div class="time-unit"><span class="val" id="d">00</span><span class="lbl">Days</span></div>
@@ -757,10 +819,10 @@
     <!-- Daily Scripture Bar -->
     <div class="verse-bar">
         <i class="fa-solid fa-quote-left" style="color: var(--accent);"></i>
-        <span>"For where two or three gather in my name, there am I with them." — Matthew 18:20</span>
+        <span>"But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control." — Galatians 5:22-23</span>
     </div>
 
-    <!-- Vision & Mission Section -->
+    <!-- Vision & Mission Section (Updated from Banner) -->
     <section class="section" id="about">
         <div class="section-header">
             <h2>Who We Are</h2>
@@ -774,9 +836,7 @@
                 </div>
                 <h3>Our Vision</h3>
                 <p>
-                    To be a vibrant Christ-centered community devoted to spreading the Gospel, 
-                    fostering genuine spiritual growth, and transforming lives through the love, 
-                    grace, and truth of Jesus Christ.
+                    To prepare members for the second coming of our Lord and Saviour Jesus Christ.
                 </p>
             </div>
 
@@ -785,10 +845,11 @@
                     <i class="fa-solid fa-bullseye"></i>
                 </div>
                 <h3>Our Mission</h3>
-                <p>
-                    To glorify God by reaching the unreached, discipling believers into spiritual maturity, 
-                    and equipping every member for impactful service within our church, local community, and the world.
-                </p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> To bring the unsaved to the saving knowledge of Christ.</li>
+                    <li><i class="fa-solid fa-check"></i> To equip believers with biblical truth.</li>
+                    <li><i class="fa-solid fa-check"></i> To send believers into the world for soul winning.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -807,7 +868,7 @@
                     <span class="card-tag">Sunday Worship</span>
                     <h3 class="card-title">Main Worship Service</h3>
                     <div class="card-detail"><i class="fa-regular fa-clock"></i> 9:00 AM – 11:30 AM</div>
-                    <div class="card-detail"><i class="fa-solid fa-location-dot"></i> Sanctuary, Calabar</div>
+                    <div class="card-detail"><i class="fa-solid fa-location-dot"></i> No 59 Odukpani Road, Diamond Hill, Calabar</div>
                     <p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.88rem;">
                         Experience heartfelt worship, uplifting praise, and actionable biblical teachings.
                     </p>
@@ -820,7 +881,7 @@
                     <span class="card-tag">Wednesday Study</span>
                     <h3 class="card-title">Mid-Week Prayer & Bible Study</h3>
                     <div class="card-detail"><i class="fa-regular fa-clock"></i> 5:30 PM – 6:30 PM</div>
-                    <div class="card-detail"><i class="fa-solid fa-location-dot"></i> Sanctuary, Calabar</div>
+                    <div class="card-detail"><i class="fa-solid fa-location-dot"></i> No 59 Odukpani Road, Diamond Hill, Calabar</div>
                     <p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.88rem;">
                         Strengthen your spiritual walk mid-week with focused prayer and interactive bible study.
                     </p>
@@ -872,14 +933,16 @@
 
         <div class="card" style="padding: 1.5rem;">
             <h3><i class="fa-solid fa-church" style="color: var(--accent);"></i> New Covenant Baptist Church</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Located in Calabar, Cross River State, Nigeria.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.2rem;">
+                No 59 Odukpani Road, Diamond Hill, Calabar, Cross River State.
+            </p>
 
             <div class="contact-card-grid">
                 <div class="contact-box">
                     <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
                     <div class="contact-info">
                         <label>Phone Number</label>
-                        <a href="tel:+2348000000000">+234 (0) 800 000 0000</a>
+                        <a href="tel:08030784399">08030784399</a>
                     </div>
                 </div>
 
@@ -887,12 +950,12 @@
                     <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                     <div class="contact-info">
                         <label>Email Address</label>
-                        <a href="mailto:info@newcovenantcalabar.org">info@newcovenantcalabar.org</a>
+                        <a href="mailto:ncbccalabar@gmail.com">ncbccalabar@gmail.com</a>
                     </div>
                 </div>
             </div>
 
-            <button class="btn btn-accent" style="width: 100%; margin-bottom: 1rem;" onclick="copyAddress()"><i class="fa-solid fa-copy"></i> Copy Address</button>
+            <button class="btn btn-accent" style="width: 100%; margin-bottom: 1rem;" onclick="copyAddress()"><i class="fa-solid fa-copy"></i> Copy Full Address</button>
 
             <iframe class="map-box" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127123.6331908998!2d8.283120153835467!3d4.975716162319409!2m3!1f0!0!f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105373a216616421%3A0xd738b5849889508!2sCalabar%2C%20Cross%20River!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe>
         </div>
@@ -937,7 +1000,7 @@
         <div class="footer-grid">
             <div>
                 <h3 style="color: white; margin-bottom: 0.75rem;">New Covenant Baptist</h3>
-                <p style="font-size: 0.9rem;">Spreading the message of hope and faith across Calabar.</p>
+                <p style="font-size: 0.9rem;">No 59 Odukpani Road, Diamond Hill, Calabar, Cross River State.</p>
                 <div class="social-links">
                     <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-youtube"></i></a>
@@ -947,8 +1010,8 @@
             </div>
             <div class="footer-col">
                 <h4>Contact Info</h4>
-                <p style="font-size: 0.9rem;"><i class="fa-solid fa-phone"></i> +234 (0) 800 000 0000</p>
-                <p style="margin-top: 0.4rem; font-size: 0.9rem;"><i class="fa-solid fa-envelope"></i> info@newcovenantcalabar.org</p>
+                <p style="font-size: 0.9rem;"><i class="fa-solid fa-phone"></i> 08030784399</p>
+                <p style="margin-top: 0.4rem; font-size: 0.9rem;"><i class="fa-solid fa-envelope"></i> ncbccalabar@gmail.com</p>
             </div>
             <div class="footer-col">
                 <h4>Service Times</h4>
@@ -1013,7 +1076,7 @@
         }
 
         function copyAddress() {
-            navigator.clipboard.writeText("New Covenant Baptist Church, Calabar, Cross River State, Nigeria");
+            navigator.clipboard.writeText("No 59 Odukpani Road, Diamond Hill, Calabar, Cross River State");
             alert("Address copied to clipboard!");
         }
     </script>
